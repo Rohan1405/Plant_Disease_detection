@@ -20,8 +20,6 @@ This repository contains the source code for a Plant Disease Detection website. 
 ![Demo Image 3](img/img3.jpg)
 ![Demo Image 4](img/img4.jpg)
 
-
-
 ## Getting Started
 
 ### Prerequisites
