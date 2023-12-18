@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <title>Plant disease detection</title>
+    <style>
+        *{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    font-size: 16px;
+    --light-grey: #f2f2f2;
+    --dark-green: #008000;
+    --more-dark-green: #34610B;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-grey);
+    overflow-x: hidden;
+}
+a{
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* 
+    --------------- Helper class ---------------
+*/
+.button-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button{
+    width: 11rem;
+    height: 3rem;
+    border-radius: 0.313rem;
+    text-align: center;
+    padding: 0.625rem;
+    border: solid 1px var(--dark-green);
+    transition: 0.3s ease-in-out;
+}
+.button-solid{
+    background-color: var(--dark-green);
+    color: var(--light-grey);
+}
+
+
+.ball{
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(259.55deg, #FFFFFF -26.04%, rgba(255, 255, 255, 0) 79.12%), #72DB72;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* 
+    --------------- nav bar ---------------
+*/
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.875rem 9.125rem 0rem 9.125rem;
+}
+.logo{
+    flex: 2;
+    font-size: 1.563rem;
+    font-weight: 700;
+}
+.nav ul{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.nav ul li a{
+    transition: 0.3s ease-in-out;
+    padding: 0.625rem;
+}
+.nav ul li a:hover{
+    color: var(--more-dark-green);
+}
+
+/*
+    --------------- Hero section ---------------
+*/
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.description{
+    flex: 1;
+    align-self: center;
+    margin-left: 9.125rem;
+    text-align: left;
+}
+.description h2{
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+.description p{
+    max-width: 34.125rem;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+.hero-image{
+    flex: 1;
+    position: relative;
+    overflow-x: hidden;
+}
+.hero-image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+.description .button-group{
+    width: 23.063rem;
+    margin-top: 2.125rem;
+}
+
+/*
+    --------------- Info section ---------------
+*/
+
+.info{
+    margin: 18.938rem 9.125rem 0rem 9.125rem;
+}
+.info-point{
+    display: flex;
+    flex-direction: row;
+    height: 24.75rem;
+    width: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    margin-bottom: 13.625rem;
+    margin-top: 13.625rem;
+}
+.info-point-rev{
+    flex-direction: row-reverse;
+}
+.info-description{
+    flex: 1;
+    align-self: center;
+}
+.info-description h3{
+    color: var(--dark-green);
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 3.125rem;
+}
+.info-description p{
+    font-size: 1.25rem;
+    max-width: 35.125rem;
+}
+.info-image{
+    flex: 1;
+    width: 100%;
+}
+.info-image img{
+    height: 100%;
+    width: 100%;
+}
+
+
+#ball-1{
+    width: 39.125rem;
+    height: 39.125rem;
+    left: -26rem;
+    top: -7rem;
+}
+
+#ball-2{
+    width: 24.438rem;
+    height: 24.438rem;
+    right: -20rem;
+    top: -8rem;
+}
+#ball-3{
+    width: 18rem;
+    height: 18rem;
+    left: -18rem;
+    top: -4rem;
+}
+#ball-4{
+    width: 14.625rem;
+    height: 14.625rem;
+    left: -9rem;
+    top: -12rem;
+}
+
+/*
+    --------------- Info section ---------------
+*/
+@media (max-width: 1224px) {
+    .logo{
+        font-size: 1.25rem;
+    }
+    .nav{
+        margin: 1.5rem 3.125rem 0rem 3.125rem;
+    }
+    .nav ul{
+        font-size: 1.125rem;
+    }
+    .only-desktop{
+        display: none !important;
+    }
+    .hero{
+        /* flex-direction: column; */
+        display: block;
+    }
+    .description{
+        padding-top: 9.125rem;
+        margin-left: 3.125rem;
+        margin-right: 3.125rem;
+        text-align: center;
+    }
+    .description p{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-image{
+        /* flex: 2; */
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    .hero-image img{
+        height: unset;
+        width: 100%;
+    }
+    .description .button-group{
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        width: 100%;
+    }
+    .info{
+        margin-left: 3.125rem;
+        margin-right: 3.125rem;
+        margin-top: 9.25rem;
+    }
+    .info-point{
+        flex-direction: column;
+        height: unset;
+        text-align: center;
+    }
+    .info-description{
+        margin-bottom: 3.125rem;
+    }
+    .info-description h3{
+        font-size: 1.25;
+    }
+    .info-description p{
+        font-size: 1rem;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <h1 class="logo">PhytoGuardian</h1>
+            <ul>
+                <li class="only-desktop"><a href="#">Home</a></li>
+                <li><a href="./try_now.html">Try Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="description">
+                <h2 class="only-desktop">
+                    PhytoGuardian
+                </h2>
+                <p>
+                    Help to protect all type plants from all kind of disease. Give your plants the care they desearve with help of PhytoGuardian.
+                </p>
+                <div class="button-group">
+                    <a href="#info" class="button button-hollow">Know More</a>
+                    <a href="./try_now.html" class="button button-solid only-desktop">Try Now</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="static/assets/plants.jpeg" alt="nice banner image" srcset="">
+            </div>
+        </section>
+
+        <section class="info" id="info">
+
+            <div class="info-point">
+                <div class="ball" id="ball-1"></div>
+                <div class="info-description">
+                    <h3>
+                        What is PhytoGuardian
+                    </h3>
+                    <p>
+                        PhytoGuardian is an online service which helps you to detect which disease your plants are suffering from with the help of advanced image processing and artificial intillegence and suggest what you can do to help them.
+                    </p>
+                </div>
+                <div class="info-image">
+                    <img src="static/assets/undraw_friendship_mni7.svg" alt="" srcset="">
+                </div>
+            </div>
+
+            <div class="info-point info-point-rev">
+                <div class="ball" id="ball-2"></div>
+                <div class="info-description">
+                    <h3>
+                        Instant results
+                    </h3>
+                    <p>
+                        Get results instantly without any long process. Just click the picture of leaf upload and get the results it’s that simple.                    </p>
+                </div>
+                <div class="info-image">
+                    <img src="static/assets/undraw_instat_analysis_ajld.svg" alt="" srcset="">
+                </div>
+            </div>
+
+            <div class="info-point">
+                <div class="ball" id="ball-3"></div>
+                <div class="ball" id="ball-4"></div>
+
+                <div class="info-description">
+                    <h3>
+                        Works everywere.
+                    </h3>
+                    <p>
+                        PhytoGuardian can be used on all devices including smartphone, tablet, PC and mac.
+                    </p>
+                </div>
+                <div class="info-image">
+                    <img src="static/assets/undraw_Devices_re_dxae.svg" alt="" srcset="">
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+</body>
+</html>

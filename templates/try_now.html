@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/try_now.css">
+    <title>Try Now</title>
+    <style>
+        *{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    font-size: 16px;
+    --light-grey: #f2f2f2;
+    --dark-green: #008000;
+    --more-dark-green: #34610B;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-grey);
+    overflow: hidden;
+}
+a{
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.only-mobile{
+    visibility: hidden;
+}
+/* 
+    --------------- Helper class ---------------
+*/
+.button-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button{
+    width: 11rem;
+    height: 3rem;
+    border-radius: 0.313rem;
+    text-align: center;
+    padding: 0.625rem;
+    border: solid 1px var(--dark-green);
+    transition: 0.3s ease-in-out;
+}
+.button-solid{
+    background-color: var(--dark-green);
+    color: var(--light-grey);
+}
+
+
+.ball{
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(259.55deg, #FFFFFF -26.04%, rgba(255, 255, 255, 0) 79.12%), #72DB72;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* 
+    --------------- nav bar ---------------
+*/
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.875rem 9.125rem 0rem 9.125rem;
+}
+.logo{
+    flex: 2;
+    font-size: 1.563rem;
+    font-weight: 700;
+}
+.nav ul{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.nav ul li a{
+    transition: 0.3s ease-in-out;
+    padding: 0.625rem;
+}
+.nav ul li a:hover{
+    color: var(--more-dark-green);
+}
+
+/* 
+    --------------- try-now ---------------
+*/
+
+.try-now{
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0rem 9.125rem;
+}
+.filler-image{
+    flex: 1;
+}
+.filler-image img{
+    width: 100%;
+    max-width: 36.375rem;
+}
+.form-section{
+    flex: 1;
+}
+.card{
+    margin: auto;
+    background-color: white;
+    width: 30.75rem;
+    height: 31.25rem;
+    border-radius: 6px;
+    box-shadow: 0.625rem 0.625rem 1.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card input{
+    width: 25.688rem;
+    height: 3.75rem;
+    background-color: #CEDAD5;
+    border: none;
+    padding: 0.625rem;
+    font-size: 1.125rem;
+    color: #474747;
+    border-radius: 0.313rem;
+}
+.card .button{
+    width: 25.688rem;
+    height: 3.75rem;
+    font-size: 1.25rem;
+}
+#switch-action{
+    color: var(--dark-green);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#ball-1{
+    width: 39.125rem;
+    height: 39.125rem;
+    left: -22rem;
+    bottom: -26rem;
+    z-index: 1;
+}
+
+#ball-2{
+    width: 24.438rem;
+    height: 24.438rem;
+    left: -2rem;
+    bottom: -14rem;
+    z-index: 1;
+}
+
+@media (max-width: 1224px) {
+    .logo{
+        font-size: 1.25rem;
+    }
+    .nav{
+        margin: 1.5rem 3.125rem 0rem 3.125rem;
+    }
+    .nav ul{
+        font-size: 1.125rem;
+    }
+    .only-desktop{
+        display: none !important;
+    }
+}
+
+@media (max-width: 550px){
+    .card{
+        width: 100vw;
+        background-color: var(--light-grey);
+        box-shadow: none;
+    }
+    .only-mobile{
+        visibility: visible;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <h1 class="logo">PhytoGuardian</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="try-now">
+        <div class="filler-image only-desktop">
+            <img src="static/assets/undraw_authentication_fsn5.svg" alt="" srcset="">
+        </div>
+        <div class="form-section">
+            <div class="card">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <a href="./analyse.html" class="button button-solid" id="login">Login</a>
+                <p id="switch-action">
+                    Create new acccount
+                </p>
+            </div>
+        </div>
+    </main>
+    <div class="ball only-mobile" id="ball-1"></div>
+    <div class="ball only-mobile" id="ball-2"></div>
+</body>
+</html>
