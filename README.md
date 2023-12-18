@@ -1,6 +1,6 @@
 # Plant Disease Detection Website
 
-![Plant Disease Detection](path/to/your/image.png)
+![Plant Disease Detection](static/assets/plants.jpeg)
 
 ## Overview
 
@@ -15,10 +15,12 @@ This repository contains the source code for a Plant Disease Detection website. 
 
 ## Demo
 
-![Demo Image 1](static/assets/plants.jpeg)
-![Demo Image 2](path/to/demo/image2.png)
+![Demo Image 1](img/img1.jpg)
+![Demo Image 2](img/img2.jpg)
+![Demo Image 3](img/img3.jpg)
+![Demo Image 4](img/img4.jpg)
 
-Explore the live demo [here](https://your-website-url.com).
+
 
 ## Getting Started
 
